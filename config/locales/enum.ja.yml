@@ -1,0 +1,6 @@
+ja:
+  enums:
+    budget:
+      category:
+        expenditure: 支出
+        income: 収入

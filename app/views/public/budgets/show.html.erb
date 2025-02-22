@@ -1,0 +1,48 @@
+<h1>Public::Budgets#show</h1>
+<div class="row">
+  <div class="col-md-3">
+    <%= render 'public/users/user_info', user: current_user %>
+  </div>
+  <div class="col-md-9">
+    <div class="row">
+      <div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+        <div class="card shadow mt-5">
+          <div class="card-body">
+            <h3>
+              <span class="badge badge-<%= budget_budge_color(@budget) %>">
+                <%= @budget.category_i18n %>
+              </span>
+            </h3>
+            <table class="table">
+              <tr>
+                <th><%= t 'activerecord.attributes.budget.payment_date' %></th>
+                <td><%= l @budget.payment_date, format: :date %></td>
+              </tr>
+              <tr>
+                <th><%= t 'activerecord.attributes.budget.title' %></th>
+                <td><%= @budget.title %></td>
+              </tr>
+              <tr>
+                <th><%= t 'activerecord.attributes.budget.amount' %></th>
+                <td>
+                  <span class="d-flex justify-content-start">
+                    <%= @budget.amount.to_s(:delimited) %>
+                  <span>
+                </td>
+              </tr>
+              <tr>
+                <th><%= t 'activerecord.attributes.budget.body' %></th>
+                <td><%= simple_format @budget.body %></td>
+              </tr>
+            </table>
+
+            <div class="d-flex justify-content-around">
+              <%= link_to "編集", edit_budget_path(@budget), class: "btn btn-warning" %>
+              <%= link_to "削除", @budget, method: :delete, data: { confirm: "本当に削除しますか?" }, class: "btn btn-danger" %> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

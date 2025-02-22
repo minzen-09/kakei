@@ -1,0 +1,12 @@
+ja:
+  activerecord:
+    attributes:
+      post:
+        title: タイトル
+        body: 内容
+      budget:
+        title: 内容
+        body: コメント
+        category: 収支
+        amount: 金額
+        payment_date: 日付

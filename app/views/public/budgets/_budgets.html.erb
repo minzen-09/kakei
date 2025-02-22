@@ -1,0 +1,30 @@
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th><%= t 'activerecord.attributes.budget.payment_date' %></th>
+      <th><%= t 'activerecord.attributes.budget.title' %></th>
+      <th><%= t 'activerecord.attributes.budget.amount' %></th>
+      <th><%= t 'activerecord.attributes.budget.body' %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% budgets.each do |budget| %>
+      <tr>
+        <td>
+          <span class="badge badge-<%= budget_budge_color(budget) %>">
+            <%= budget.category_i18n %>
+          </span>
+        </td>
+        <td><%= l budget.payment_date, format: :date %></td>
+        <td><%= link_to budget.title, budget %></td>
+        <td>
+          <span class="d-flex justify-content-end">
+            <%= budget.amount.to_s(:delimited) %>
+          <span>
+        </td>
+        <td><%= simple_format budget.body %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

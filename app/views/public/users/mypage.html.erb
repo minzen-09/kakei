@@ -1,0 +1,25 @@
+<h1>マイページ</h1>
+
+<div class="row">
+  <div class="col-md-3">
+    <%= render 'public/users/user_info', user: current_user %>
+  </div>
+  <div class="col-md-9">
+    <h2><%= l @date, format: :month %>の収支</h2>
+    <div class="d-flex justify-content-between">
+      <%= link_to "<前の月へ", mypage_path(date: l(@date.ago(1.month), format: :to_param)) %>
+      <%= link_to "当月へ", mypage_path %>
+      <%= link_to "次の月へ>", mypage_path(date: l(@date.since(1.month), format: :to_param)) %>
+    </div>
+    <%= render 'public/budgets/budgets', budgets: @budgets %>
+    <div class="row">
+      <div class="col-md-7 offset-md-5">
+        <%= render 'public/budgets/total', budgets: @budgets %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<%= @budgets.pluck(:category).inspect %>

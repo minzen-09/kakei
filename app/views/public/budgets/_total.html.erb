@@ -1,0 +1,30 @@
+<% incomes = budgets.incomes %>
+<% expenditudes = budgets.expenditures %>
+<table class="table table-bordered">
+  <tbody>
+    <tr>
+      <th>収入合計</th>
+      <td>
+        <span class="d-flex justify-content-end">
+          <%= sum_amounts(incomes).to_s(:delimited) %>
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <th>支出合計</th>
+      <td>
+        <span class="d-flex justify-content-end">
+          <%= sum_amounts(expenditudes).to_s(:delimited) %>
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <th>収支合計</th>
+      <td>
+        <span class="d-flex justify-content-end">
+          <%= sub_amounts(incomes, expenditudes).to_s(:delimited) %>
+        </span>
+      </td>
+    </tr>
+  </tbody>
+</table>

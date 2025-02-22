@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 (1..10).each do |i|
-  user = User.create!(name: "name_#{i}", email: "test_#{i}@test.com", password: "password")
+  user = User.create!(name: "user_#{i}", email: "user_#{i}@test.com", password: "password")
   (1..rand(1..3)).each do |n|
     user.posts.create!(title: "test_user_#{i}", body: "x" * rand(10..100))
   end
