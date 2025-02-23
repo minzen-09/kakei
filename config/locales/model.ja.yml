@@ -10,3 +10,5 @@ ja:
         category: 収支
         amount: 金額
         payment_date: 日付
+      comment:
+        body: 内容

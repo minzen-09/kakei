@@ -1,0 +1,13 @@
+
+    <%= form_with model: [post, comment] do |f| %>
+      <%= render "layouts/error_messages", model: f.object %>
+
+      <div class="mb-2">
+        <%= f.text_area :body, rows: 4, class: "form-control", placeholder: "コメントを投稿できます" %>
+      </div>
+
+      <div class="my-4 d-flex justify-content-center">
+        <%= f.submit "コメントする", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+
