@@ -1,5 +1,9 @@
 <h3><%= user.name %>のペ-ジ</h3>
 
-<% if current_user == user %>
-  <%= link_to '収支の登録をする', new_budget_path, class: "btn btn-primary btn-block" %>
+<% if user_signed_in? && current_user == user %>
+  <%= link_to '収支の登録をする', new_budget_path, class: "btn btn-primary btn-block mb-4" %>
+<% end %>
+
+<% if user_signed_in? && current_user != user %>
+  <%= render 'public/relationships/follow_button', user: user %>
 <% end %>

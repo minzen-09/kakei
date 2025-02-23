@@ -20,12 +20,13 @@
               </tr>
             </table>
 
-            <% if user_signed_in? && current_user == @post.user %>
-              <div class="d-flex justify-content-around">
+            <div class="d-flex justify-content-around">
+              <%= render 'public/favorites/favorite_button', post: @post if user_signed_in? %>
+              <% if user_signed_in? && current_user == @post.user %>
                 <%= link_to "編集", edit_post_path(@post), class: "btn btn-warning" %>
                 <%= link_to "削除", @post, method: :delete, data: { confirm: "本当に削除しますか?" }, class: "btn btn-danger" %> 
-              </div>
-            <% end %>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>

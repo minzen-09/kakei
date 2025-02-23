@@ -1,0 +1,5 @@
+<% if current_user.favorite?(post) %>
+  <%= link_to "unfavorite", post_favorites_path(post), method: :delete, class: "btn btn-danger" %>
+<% else %>
+  <%= link_to "favorite", post_favorites_path(post), method: :post, class: "btn btn-primary" %>
+<% end %>
