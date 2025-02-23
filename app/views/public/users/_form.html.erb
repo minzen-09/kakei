@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
+    <div class="card shadow mt-5">
+      <div class="card-body">
+
+        <h2 class="d-flex justify-content-center"><%= button_text %></h2>
+
+        <%= form_with model: user do |f| %>
+          <%= render "layouts/error_messages", model: f.object %>
+
+          <div class="mb-2">
+            <%= f.label :name %>
+            <%= f.text_field :name, class: "form-control" %>
+          </div>
+
+          <div class="my-4 d-flex justify-content-center">
+            <%= f.submit button_text, class: "btn btn-primary" %>
+          </div>
+        <% end %>
+
+        <%= link_to "退会する", user, method: :delete, data: { ocnfirm: "本当に削除しますか" } %>
+      </div>
+    </div>
+  </div>
+</div>
+
+

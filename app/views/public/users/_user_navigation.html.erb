@@ -1,0 +1,6 @@
+<div class="d-flex">
+  <%= link_to "投稿一覧", user_path(user), class: "btn btn-secondary mr-2" %>
+  <%= link_to "お気に入り一覧", favorites_user_path(user), class: "btn btn-secondary mr-2" %>
+  <%= link_to "フォロ一覧", followings_user_path(user), class: "btn btn-secondary mr-2" %>
+  <%= link_to "フォロワ一覧", followers_user_path(user), class: "btn btn-secondary mr-2" %>
+</div>

@@ -1,0 +1,14 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th><%= t 'activerecord.attributes.user.name' %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% users.each do |user| %>
+      <tr>
+        <td><%= link_to user.name, user %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

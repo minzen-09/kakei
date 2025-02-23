@@ -23,7 +23,7 @@
             <%= budget.amount.to_s(:delimited) %>
           <span>
         </td>
-        <td><%= simple_format budget.body %></td>
+        <td style="word-break:break-all;"><%= simple_format budget.body %></td>
       </tr>
     <% end %>
   </tbody>

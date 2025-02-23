@@ -22,3 +22,38 @@
                          payment_date: Time.current.ago(rand(1..20).days))
   end
 end
+
+follower_users = User.first(7)
+following_users = User.last(7)
+
+follower_users.each do |follower_user|
+  following_users.each do |following_user|
+    if rand(1..5) != 1 && follower_user != following_user
+      follower_user.follow(following_user)
+    end
+  end
+end
+
+users = User.all.sample(6)
+posts = Post.all.sample(Post.all.size / 3 * 2)
+
+users.each do |user|
+  posts.each do |post|
+    if rand(1..2) != 1
+      user.favorite(post)
+    end
+  end
+end
+
+users = User.all.sample(5)
+posts = Post.all.sample(10)
+
+users.each do |user|
+  posts.each do |post|
+    if rand(1..2) != 1
+      user.comments.create!(post: post, body: "xxx" * rand(5..10))
+    end
+  end
+end
+
+

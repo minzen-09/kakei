@@ -4,7 +4,7 @@ class Public::UsersController < ApplicationController
   before_action :correct_user, only: [:edit, :update, :destroy]
 
   def show
-    @user = User.find(params[:id])
+    @posts = @user.posts
   end
 
   def edit
@@ -53,5 +53,9 @@ class Public::UsersController < ApplicationController
 
   def set_params
     @user = User.find(params[:id])
+  end
+
+  def correct_user
+    redirect_to root_url unless current_user == @user
   end
 end
