@@ -1,0 +1,18 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th><%= t 'activerecord.attributes.user.name' %></th>
+      <th><%= t 'activerecord.attributes.user.email' %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% users.each do |user| %>
+      <tr>
+        <td><%= user.id %></td>
+        <td><%= link_to user.name, admin_user_path(user) %></td>
+        <td><%= user.email %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

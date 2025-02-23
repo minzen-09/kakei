@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Admin.create!(email: 'admin@test.com', password: 'password')
+
 (1..10).each do |i|
   user = User.create!(name: "user_#{i}", email: "user_#{i}@test.com", password: "password")
   (1..rand(1..3)).each do |n|
