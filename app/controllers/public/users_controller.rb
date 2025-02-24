@@ -45,6 +45,12 @@ class Public::UsersController < ApplicationController
     @users = @user.follower_users
   end
 
+  def guest_login
+    @user = User.guest
+    sign_in(@user)
+    redirect_to root_path
+  end
+
   private
 
   def user_params

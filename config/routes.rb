@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     root to: 'homes#top'
     get 'about', to: 'homes#about'
     get 'mypage', to: 'users#mypage'
+    post 'guest_login', to: 'users#guest_login'
     resources :users, only: [:show, :edit, :update, :destroy] do
       resource :relationships, only: [:create, :destroy]
       member do

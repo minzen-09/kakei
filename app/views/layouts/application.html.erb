@@ -15,9 +15,12 @@
     <header>
       <%= render 'layouts/navigation' %>
     </header>
-    <div class="container mt-4">
-      <%= render 'layouts/flash_messages' %>
-      <%= yield %>
-    </div>
+    <main>
+      <%= yield :bg_area %>
+      <div class="container mt-4">
+        <%= render 'layouts/flash_messages' %>
+        <%= yield %>
+      </div>
+    </main>
   </body>
 </html>

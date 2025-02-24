@@ -1,2 +1,10 @@
-<h1>Public::Homes#top</h1>
-<p>Find me in app/views/public/homes/top.html.erb</p>
+<%= content_for :bg_area do %>
+  <div class="bg-area">
+    <div class="d-flex justify-content-center h-100">
+      <div style="margin-bottom:15vh;margin-top:auto;">
+        <%= link_to "Kakeiを始める", new_user_registration_path, class: "btn btn-primary btn-block py-3" %>
+        <%= link_to "ゲストでログインする", guest_login_path, method: :post, class: "btn btn-secondary btn-block mt-2" %>
+      </div>
+    </div>
+  </div>
+<% end %>
