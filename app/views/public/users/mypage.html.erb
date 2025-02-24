@@ -20,6 +20,6 @@
   </div>
 </div>
 
-
-
-<%= @budgets.pluck(:category).inspect %>
+<% if @budgets.pluck(:category).present? %>  <%# < @budgets.pluck(:category).inspect > のデータがないとき非表示に修正 %>
+  <%= @budgets.pluck(:category).inspect %>
+<% end %>

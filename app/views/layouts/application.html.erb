@@ -18,7 +18,7 @@
     <main>
       <%= yield :bg_area %>
       <div class="container">
-        <%= render 'public/searches/form' if params[:controlle] != 'homes' %>
+        <%= render 'public/searches/form' if params[:controller] != 'public/homes' %>
         <%= render 'layouts/flash_messages' %>
         <%= yield %>
       </div>
