@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-md-7 offset-md-5">
+    <%= form_with url: search_path, method: :get do |f| %>
+      <div class="row">
+        <div class="col-3">
+          <%= f.select :model, ["User", "Post"].map{ |o| [I18n.t("activerecord.models.#{o.downcase}"), o] }, { selected: params[:model]}, { class: "form-control"} %>
+        </div>
+        <div class="col-6">
+          <%= f.search_field :keyword, value: params[:keyword], placeholder: "Keywordで検索", class: "form-control" %>
+        </div>
+        <div class="col-3">
+          <%= f.submit "検索する", class: "btn btn-primary btn-block" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

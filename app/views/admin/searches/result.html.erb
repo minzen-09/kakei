@@ -1,0 +1,9 @@
+<h1>検索結果</h1>
+
+<% if @result.blank? %>
+  <h2>該当するDataはありません</h2>
+<% elsif params[:model] == "User" %>
+  <%= render 'admin/users/users', users: @result %>
+<% elsif params[:model] == "Post" %>
+  <%= render 'admin/posts/posts', posts: @result %>
+<% end %>

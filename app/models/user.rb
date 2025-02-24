@@ -52,4 +52,8 @@ class User < ApplicationRecord
     user.save
     user
   end
+
+  def self.search(keyword)
+    self.where("name LIKE(?)", "%#{keyword}%")
+  end
 end

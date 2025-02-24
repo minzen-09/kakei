@@ -1,0 +1,11 @@
+<h1>検索結果</h1>
+
+<% if @result.blank? %>
+  <h2>>該当するDataはありません</h2>
+<% elsif params[:model] == "User" %>
+  <%= render 'public/users/users', users: @result %>
+<% elsif params[:model] == "Post" %>
+  <%= render 'public/posts/posts', posts: @result %>
+<% end %>
+
+

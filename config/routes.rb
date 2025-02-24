@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     get 'about', to: 'homes#about'
     get 'mypage', to: 'users#mypage'
     post 'guest_login', to: 'users#guest_login'
+    get 'search', to: 'searches#search'
     resources :users, only: [:show, :edit, :update, :destroy] do
       resource :relationships, only: [:create, :destroy]
       member do
@@ -31,6 +32,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root to: 'users#index'
+    get 'search', to: 'searches#search'
     resources :users, only: [:index, :show, :destroy]
     resources :posts, only: [:index, :show, :destroy]
     resources :comments, only: [:index, :destroy] 
